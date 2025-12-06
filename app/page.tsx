@@ -7,7 +7,6 @@ import {
   Mail, 
   Linkedin, 
   Github, 
-  Twitter, 
   FileText,
   ChevronRight,
   Zap,
@@ -68,10 +67,21 @@ const FlywheelNode = ({ icon: Icon, label, delay = 0 }: { icon: any, label: Reac
   </motion.div>
 );
 
-const FlywheelArrow = ({ className }: { className?: string }) => (
-  <div className={cn("absolute text-gray-300", className)}>
-    <ArrowRight size={16} strokeWidth={1} />
-  </div>
+// X Logo SVG Component
+const XIcon = ({ size = 24, className }: { size?: number; className?: string }) => (
+  <svg
+    width={size}
+    height={size}
+    viewBox="0 0 24 24"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+    className={className}
+  >
+    <path
+      d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"
+      fill="currentColor"
+    />
+  </svg>
 );
 
 export default function Home() {
@@ -174,7 +184,7 @@ export default function Home() {
             </h1>
             
             <p className="text-xl text-gray-500 leading-relaxed mb-10 max-w-xl font-light">
-              I think you’re in exactly the right place in the AI stack at exactly the right time. 
+              I think Groq is in exactly the right place in the AI stack at exactly the right time. 
               This page is my argument for why, what gap I see, and how I’d like to help during my placement year.
             </p>
             
@@ -206,7 +216,7 @@ export default function Home() {
               <h2 className="text-3xl font-bold text-gray-900 mb-6">How I see Groq in the AI value chain</h2>
             </div>
             <div className="md:col-span-8 space-y-6 text-lg text-gray-600 font-light leading-relaxed">
-              <p>The way I see it, there are two likely futures:</p>
+              <p>The way I see it, there are two likely futures in AI:</p>
               <div className="grid sm:grid-cols-2 gap-4 my-6">
                 <div className="p-5 bg-gray-50 rounded border border-gray-100">
                   <span className="block text-gray-400 mb-2 font-mono text-xs">Scenario A</span>
@@ -218,10 +228,10 @@ export default function Home() {
                 </div>
               </div>
               <p>
-                In both cases, the value shifts to <span className="text-gray-900 font-medium">cheap, fast, reliable inference</span> – getting answers out of models into products at scale.
+                In both cases, the value shifts to <span className="text-gray-900 font-medium">cheap, fast, reliable inference</span> – getting answers out of models into products fast and at scale..
               </p>
               <p>
-                You’ve already built a stack optimised for that, not for training vanity metrics. That’s why I think Groq is in the right place in the value chain.
+                You’re perfectly position for either scenario.
               </p>
             </div>
           </div>
@@ -236,14 +246,14 @@ export default function Home() {
             </div>
             <div className="md:col-span-8 space-y-6 text-lg text-gray-600 font-light leading-relaxed">
               <p>
-                For years, software engineering has been about shaving milliseconds off latency so products feel instant.
-                Then we glued LLMs into everything and quietly accepted 3–10 second waits as normal.
+                Historically, software engineering has obsessed over shaving milliseconds off latency so products feel instant and snappy.
+                Then we glued LLMs into everything and just accepted 3–10 second waits as normal.
               </p>
               <div className="pl-6 border-l-2 border-groq-orange/30 italic text-gray-500">
-                That’s fine during the hype phase, but long term, users will expect responses that are good enough, and latency that feels like normal software again.
+                That’s normal now, but long term, users will expect latency that feels like normal software again.
               </div>
               <p>
-                That’s the gap Groq fills: making AI feel like software again – fast, predictable, and affordable at the point of use.
+                That’s the gap Groq fills: making AI feel like software again – fast, predictable, and affordable.
               </p>
             </div>
           </div>
@@ -259,16 +269,18 @@ export default function Home() {
             <div className="md:col-span-8">
               <div className="prose prose-lg text-gray-600 font-light leading-relaxed mb-8">
                 <p>
-                  I’m not in love with “AI” as a buzzword or inference as an abstract concept.
-                  I care because I think Groq is going to be one of the few companies that actually matters once the noise dies down. 
-                  You’re aligned with where the value ends up, not just where the hype is.
+                  I care because I expect Groq will be an incredibly important company going forward. 
+                  You’re aligned with where the value ends up long term. I want to be a part of it.
+                </p>
+                <p>
+                  I want to:
                 </p>
               </div>
               
               <div className="space-y-4">
                 {[
                   "Bet my time on a team that is clearly going to win something important.",
-                  "Work with people who are much better than me and learn fast.",
+                  "Work with people who are much better than me so I can learn fast.",
                   "Feel slightly out of my depth walking into the office and come out sharper every week."
                 ].map((item, i) => (
                   <div key={i} className="flex items-start gap-3">
@@ -287,13 +299,15 @@ export default function Home() {
 
         {/* 5. Mindshare Gap */}
         <Section id="mindshare-gap" className="border-b border-gray-100">
-          <div className="max-w-3xl">
-            <span className="text-groq-orange font-mono text-xs uppercase tracking-wider mb-2 block">04 / Observation</span>
-            <h2 className="text-3xl font-bold text-gray-900 mb-8">The gap: developer mindshare with the next wave of builders</h2>
-            
+          <div className="grid md:grid-cols-12 gap-12">
+            <div className="md:col-span-4">
+              <span className="text-groq-orange font-mono text-xs uppercase tracking-wider mb-2 block">04 / Observation</span>
+              <h2 className="text-3xl font-bold text-gray-900 mb-6">The gap: developer mindshare with the next wave of builders</h2>
+            </div>
+            <div className="md:col-span-8">
             <div className="space-y-6 text-lg text-gray-600 font-light leading-relaxed">
               <p>
-                Through Accelerate ME (the University of Manchester’s startup accelerator) and broader student/startup communities, I see:
+                Through running Accelerate ME (the UK's leading student-led startup accelerator) and engaging with broader student/startup communities, I see:
               </p>
               <ul className="grid sm:grid-cols-3 gap-4 text-sm">
                 {[
@@ -312,7 +326,7 @@ export default function Home() {
               </p>
               
               <p>
-                They default to OpenAI, Anthropic, or whatever wrapper is loudest – even when they’re building things where latency and cost-per-call matter more than frontier intelligence.
+                They default to OpenAI, Anthropic, or whatever option has the most mindshare – even when they’re building things where latency and cost-per-call matter more than frontier intelligence.
                 That’s not a product problem. That’s a mindshare and GTM problem.
               </p>
 
@@ -321,25 +335,26 @@ export default function Home() {
                   <ChevronRight size={16} className="group-open:rotate-90 transition-transform text-gray-400" />
                   How I noticed this (short story)
                 </summary>
-                <div className="p-4 pt-0 text-gray-600 text-base border-t border-transparent group-open:border-gray-200 mt-2">
+                <div className="p-4 pt-6 text-gray-600 text-base border-t border-transparent group-open:border-gray-200">
                   <p className="mb-3">
-                    One of the most capable builders I know, George – who works with me and runs products doing tens of thousands of pounds in MRR – hadn’t heard of Groq until we sat in a Groq masterclass at Web Summit.
+                    One of the most capable builders I know, George – who works with me and runs products doing tens of thousands of pounds in MRR – hadn't heard of Groq until we sat in a Groq masterclass at Web Summit.
                   </p>
                   <p className="mb-3">
-                    Once he saw the latency and cost profile, his reaction was basically: <span className="italic">“Why was I not already using this?”</span>
+                    Once he saw the latency and cost profile, his reaction was basically: <span className="italic">"Why was I not already using this?"</span>
                   </p>
                   <p>
-                    If someone like that isn’t aware, there’s clearly a mindshare gap.
+                    If someone like that isn't aware, there's clearly a mindshare gap.
                   </p>
                 </div>
               </details>
+            </div>
             </div>
           </div>
         </Section>
 
         {/* 6. Segment to Own (Flywheel) */}
         <Section id="segment-to-own" className="border-b border-gray-100">
-          <div className="text-center mb-16 max-w-2xl mx-auto">
+          <div className="text-center mb-8 max-w-2xl mx-auto">
             <span className="text-groq-orange font-mono text-xs uppercase tracking-wider mb-2 block">05 / Strategy</span>
             <h2 className="text-3xl font-bold text-gray-900 mb-4">The segment I think Groq can quietly own</h2>
             <p className="text-gray-600 font-light">
@@ -347,46 +362,114 @@ export default function Home() {
             </p>
           </div>
 
-          <div className="relative max-w-4xl mx-auto h-[400px] md:h-[300px] flex flex-col md:flex-row items-center justify-center gap-8 md:gap-16 my-12">
-            
-            {/* Connecting Lines (Desktop) */}
-            <div className="hidden md:block absolute top-1/2 left-10 right-10 h-px bg-gray-100 -z-10" />
-            
-            {/* Mobile Lines */}
-            <div className="md:hidden absolute top-10 bottom-10 left-1/2 w-px bg-gray-100 -z-10" />
+          <div className="relative max-w-4xl mx-auto h-[400px] md:h-[300px] my-8">
+            {/* Desktop Layout */}
+            <div className="hidden md:flex relative items-center h-full w-full">
+              {/* Connecting Line */}
+              <div className="absolute top-1/2 left-0 right-0 h-px bg-gray-100 -z-10" />
+              
+              {/* Use grid for precise control */}
+              <div className="w-full grid grid-cols-7 gap-0 items-center">
+                {/* Box 1 */}
+                <div className="col-span-1 flex justify-center">
+                  <FlywheelNode 
+                    icon={GraduationCap} 
+                    label={<>Students &<br/>Founders</>} 
+                    delay={0.1}
+                  />
+                </div>
+                
+                {/* Arrow 1 */}
+                <div className="col-span-1 flex justify-center">
+                  <div className="text-gray-300">
+                    <ArrowRight size={16} strokeWidth={1} />
+                  </div>
+                </div>
 
-            <FlywheelNode 
-              icon={GraduationCap} 
-              label={<>Students &<br/>Founders</>} 
-              delay={0.1}
-            />
-            
-            <FlywheelArrow className="hidden md:block left-[23%]" />
-            <div className="md:hidden text-gray-300"><ArrowRight className="rotate-90" /></div>
+                {/* Box 2 */}
+                <div className="col-span-1 flex justify-center">
+                  <FlywheelNode 
+                    icon={Zap} 
+                    label={<>Build on<br/>Groq</>} 
+                    delay={0.2}
+                  />
+                </div>
 
-            <FlywheelNode 
-              icon={Zap} 
-              label={<>Build on<br/>Groq</>} 
-              delay={0.2}
-            />
+                {/* Arrow 2 */}
+                <div className="col-span-1 flex justify-center">
+                  <div className="text-gray-300">
+                    <ArrowRight size={16} strokeWidth={1} />
+                  </div>
+                </div>
 
-            <FlywheelArrow className="hidden md:block left-[48%]" />
-            <div className="md:hidden text-gray-300"><ArrowRight className="rotate-90" /></div>
+                {/* Box 3 */}
+                <div className="col-span-1 flex justify-center">
+                  <FlywheelNode 
+                    icon={Rocket} 
+                    label={<>Scale &<br/>Lock-in</>} 
+                    delay={0.3}
+                  />
+                </div>
 
-            <FlywheelNode 
-              icon={Rocket} 
-              label={<>Scale &<br/>Lock-in</>} 
-              delay={0.3}
-            />
+                {/* Arrow 3 */}
+                <div className="col-span-1 flex justify-center">
+                  <div className="text-gray-300">
+                    <ArrowRight size={16} strokeWidth={1} />
+                  </div>
+                </div>
 
-            <FlywheelArrow className="hidden md:block left-[73%]" />
-            <div className="md:hidden text-gray-300"><ArrowRight className="rotate-90" /></div>
+                {/* Box 4 */}
+                <div className="col-span-1 flex justify-center">
+                  <FlywheelNode 
+                    icon={Briefcase} 
+                    label={<>Bring to<br/>Companies</>} 
+                    delay={0.4}
+                  />
+                </div>
+              </div>
+            </div>
 
-            <FlywheelNode 
-              icon={Briefcase} 
-              label={<>Bring to<br/>Companies</>} 
-              delay={0.4}
-            />
+            {/* Mobile Layout */}
+            <div className="md:hidden flex flex-col items-center justify-between h-full">
+              {/* Connecting Line */}
+              <div className="absolute top-10 bottom-10 left-1/2 w-px bg-gray-100 -z-10" />
+
+              <FlywheelNode 
+                icon={GraduationCap} 
+                label={<>Students &<br/>Founders</>} 
+                delay={0.1}
+              />
+              
+              <div className="text-gray-300">
+                <ArrowRight className="rotate-90" size={16} strokeWidth={1} />
+              </div>
+
+              <FlywheelNode 
+                icon={Zap} 
+                label={<>Build on<br/>Groq</>} 
+                delay={0.2}
+              />
+
+              <div className="text-gray-300">
+                <ArrowRight className="rotate-90" size={16} strokeWidth={1} />
+              </div>
+
+              <FlywheelNode 
+                icon={Rocket} 
+                label={<>Scale &<br/>Lock-in</>} 
+                delay={0.3}
+              />
+
+              <div className="text-gray-300">
+                <ArrowRight className="rotate-90" size={16} strokeWidth={1} />
+              </div>
+
+              <FlywheelNode 
+                icon={Briefcase} 
+                label={<>Bring to<br/>Companies</>} 
+                delay={0.4}
+              />
+            </div>
           </div>
 
           <div className="text-center max-w-2xl mx-auto text-sm text-gray-500 mt-12">
@@ -396,14 +479,17 @@ export default function Home() {
 
         {/* 7. What I'd Do */}
         <Section id="what-id-do" className="border-b border-gray-100">
-          <div className="max-w-3xl">
-            <span className="text-groq-orange font-mono text-xs uppercase tracking-wider mb-2 block">06 / Execution</span>
-            <h2 className="text-3xl font-bold text-gray-900 mb-12">What I’d do in a placement</h2>
+          <div className="grid md:grid-cols-12 gap-12">
+            <div className="md:col-span-4">
+              <span className="text-groq-orange font-mono text-xs uppercase tracking-wider mb-2 block">06 / Execution</span>
+              <h2 className="text-3xl font-bold text-gray-900 mb-6">What I'd do in a placement</h2>
+            </div>
+            <div className="md:col-span-8">
             
             <div className="grid sm:grid-cols-2 gap-6">
               {[
                 {
-                  title: "University & accelerator GTM",
+                  title: "University & Accelerator GTM",
                   desc: "Work with accelerators, hackathons, and AI societies to make “building on Groq” a default option."
                 },
                 {
@@ -427,8 +513,9 @@ export default function Home() {
             </div>
 
             <p className="mt-10 text-gray-500 text-sm">
-              I’m willing to wear whatever hat is most useful – GTM, community, product-adjacent, something hybrid – as long as I’m close to the work and the team.
+              I'm willing to wear whatever hat is most useful – GTM, community, dev-ops, project management, product-adjacent, something hybrid – as long as I'm close to the work and the team.
             </p>
+            </div>
           </div>
         </Section>
 
@@ -441,26 +528,32 @@ export default function Home() {
             </p>
             <p className="text-gray-500 mb-12 leading-relaxed">
               If it makes sense, point me at this “next generation of builders / mindshare” problem and let me help turn it into a repeatable GTM motion.
+              If not, give me another problem to work on.
               I mainly want to be in the room, learn fast, and contribute.
             </p>
 
             {/* Career Timeline */}
             <div className="mb-16 pt-10 border-t border-gray-100">
               <span className="text-xs font-mono text-gray-400 uppercase tracking-wider mb-6 block">Career Context</span>
-              <div className="flex flex-col sm:flex-row items-center justify-center gap-6 sm:gap-12 text-sm">
+              <div className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-8 text-sm">
                 <div className="text-center">
-                  <div className="font-semibold text-gray-900">University of Manchester</div>
-                  <div className="text-gray-500">CS Undergrad</div>
+                  <div className="font-semibold text-gray-900">Age 16</div>
+                  <div className="text-gray-500">Founded company, scaled to six-figure revenue</div>
                 </div>
                 <div className="hidden sm:block text-gray-200">/</div>
                 <div className="text-center">
-                  <div className="font-semibold text-gray-900">Accelerate ME</div>
-                  <div className="text-gray-500">Startup Accelerator</div>
+                  <div className="font-semibold text-gray-900">Age 17</div>
+                  <div className="text-gray-500">Co-founded high six-figure blockchain project</div>
                 </div>
                 <div className="hidden sm:block text-gray-200">/</div>
                 <div className="text-center">
-                  <div className="font-semibold text-gray-900">Builder</div>
-                  <div className="text-gray-500">Shipping AI Products</div>
+                  <div className="font-semibold text-gray-900">Age 20</div>
+                  <div className="text-gray-500">VC-backed AI prop-tech startup (London)</div>
+                </div>
+                <div className="hidden sm:block text-gray-200">/</div>
+                <div className="text-center">
+                  <div className="font-semibold text-gray-900">Age 21</div>
+                  <div className="text-gray-500">Director, Accelerate ME (UK's leading student-led accelerator)</div>
                 </div>
               </div>
             </div>
@@ -470,7 +563,7 @@ export default function Home() {
                 href="mailto:placeholder@example.com"
                 className="px-8 py-4 bg-gray-900 text-white rounded font-medium hover:bg-groq-orange transition-colors duration-300 w-full sm:w-auto"
               >
-                Email Oliver
+                Contact Me
               </a>
               
               <div className="flex gap-8 text-gray-400">
@@ -478,7 +571,7 @@ export default function Home() {
                   <Linkedin size={24} strokeWidth={1.5} />
                 </a>
                 <a href="#" className="hover:text-groq-orange transition-colors">
-                  <Twitter size={24} strokeWidth={1.5} />
+                  <XIcon size={24} />
                 </a>
                 <a href="#" className="hover:text-groq-orange transition-colors">
                   <Github size={24} strokeWidth={1.5} />
