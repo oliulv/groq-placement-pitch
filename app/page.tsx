@@ -16,6 +16,7 @@ import {
 } from "lucide-react";
 import { clsx, type ClassValue } from "clsx";
 import { twMerge } from "tailwind-merge";
+import { CONTACT } from "@/lib/constants";
 
 function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs));
@@ -190,15 +191,17 @@ export default function Home() {
             
             <div className="flex flex-wrap gap-4">
               <a
-                href="mailto:placeholder@example.com"
+                href={`mailto:${CONTACT.email}`}
                 className="group inline-flex items-center gap-2 px-6 py-3 bg-gray-900 text-white rounded text-sm font-medium hover:bg-groq-orange transition-colors duration-300"
               >
                 <Mail size={16} />
-                Email Oliver
+                Email Me
                 <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
               </a>
               <a
-                href="#"
+                href={CONTACT.cv}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 px-6 py-3 bg-white border border-gray-200 text-gray-900 rounded text-sm font-medium hover:border-gray-400 transition-colors"
               >
                 <FileText size={16} />
@@ -560,23 +563,23 @@ export default function Home() {
 
             <div className="flex flex-col items-center gap-8">
               <a
-                href="mailto:placeholder@example.com"
+                href={`mailto:${CONTACT.email}`}
                 className="px-8 py-4 bg-gray-900 text-white rounded font-medium hover:bg-groq-orange transition-colors duration-300 w-full sm:w-auto"
               >
                 Contact Me
               </a>
               
               <div className="flex gap-8 text-gray-400">
-                <a href="#" className="hover:text-groq-orange transition-colors">
+                <a href={CONTACT.linkedin} target="_blank" rel="noopener noreferrer" className="hover:text-groq-orange transition-colors" aria-label="LinkedIn">
                   <Linkedin size={24} strokeWidth={1.5} />
                 </a>
-                <a href="#" className="hover:text-groq-orange transition-colors">
+                <a href={CONTACT.twitter} target="_blank" rel="noopener noreferrer" className="hover:text-groq-orange transition-colors" aria-label="X (Twitter)">
                   <XIcon size={24} />
                 </a>
-                <a href="#" className="hover:text-groq-orange transition-colors">
+                <a href={CONTACT.github} target="_blank" rel="noopener noreferrer" className="hover:text-groq-orange transition-colors" aria-label="GitHub">
                   <Github size={24} strokeWidth={1.5} />
                 </a>
-                <a href="#" className="hover:text-groq-orange transition-colors">
+                <a href={CONTACT.cv} target="_blank" rel="noopener noreferrer" className="hover:text-groq-orange transition-colors" aria-label="Download CV">
                   <FileText size={24} strokeWidth={1.5} />
                 </a>
               </div>
