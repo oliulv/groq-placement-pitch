@@ -302,43 +302,43 @@ export default function Home() {
 
         {/* 5. Mindshare Gap */}
         <Section id="mindshare-gap" className="border-b border-gray-100">
-          <div className="grid md:grid-cols-12 gap-12">
+          <div className="grid md:grid-cols-12 gap-6 md:gap-12">
             <div className="md:col-span-4">
               <span className="text-groq-orange font-mono text-xs uppercase tracking-wider mb-2 block">04 / Observation</span>
-              <h2 className="text-3xl font-bold text-gray-900 mb-6">The gap: developer mindshare with the next wave of builders</h2>
+              <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4 md:mb-6">The gap: developer mindshare with the next wave of builders</h2>
             </div>
             <div className="md:col-span-8">
-            <div className="space-y-6 text-lg text-gray-600 font-light leading-relaxed">
+            <div className="space-y-4 md:space-y-6 text-base md:text-lg text-gray-600 font-light leading-relaxed">
               <p>
                 Through running Accelerate ME (the UK's leading student-led startup accelerator) and engaging with broader student/startup communities, I see:
               </p>
-              <ul className="grid sm:grid-cols-3 gap-4 text-sm">
+              <ul className="grid grid-cols-1 sm:grid-cols-3 gap-3 md:gap-4 text-sm">
                 {[
                   "Students & Engineers building serious AI projects",
                   "Hackathon teams where everyone uses LLMs",
                   "Side projects doing real revenue with AI"
                 ].map((item, i) => (
-                  <li key={i} className="bg-gray-50 p-4 rounded border border-gray-100 text-gray-800 flex flex-col justify-between h-full">
+                  <li key={i} className="bg-gray-50 p-3 md:p-4 rounded border border-gray-100 text-gray-800">
                     <span>{item}</span>
                   </li>
                 ))}
               </ul>
               
-              <p className="text-xl text-gray-900 font-normal">
+              <p className="text-lg md:text-xl text-gray-900 font-normal">
                 Almost none of them are using Groq.
               </p>
               
               <p>
-                They default to OpenAI, Anthropic, or whatever option has the most mindshare – even when they’re building things where latency and cost-per-call matter more than frontier intelligence.
-                That’s not a product problem. That’s a mindshare and GTM problem.
+                They default to OpenAI, Anthropic, or whatever option has the most mindshare – even when they're building things where latency and cost-per-call matter more than frontier intelligence.
+                That's not a product problem. That's a mindshare and GTM problem.
               </p>
 
-              <details className="group mt-6 open:bg-gray-50 transition-colors rounded-lg overflow-hidden border border-gray-200">
-                <summary className="flex items-center gap-3 p-4 cursor-pointer font-medium text-gray-900 hover:text-groq-orange transition-colors select-none">
-                  <ChevronRight size={16} className="group-open:rotate-90 transition-transform text-gray-400" />
+              <details className="group mt-4 md:mt-6 open:bg-gray-50 transition-colors rounded-lg overflow-hidden border border-gray-200">
+                <summary className="flex items-center gap-3 p-3 md:p-4 cursor-pointer font-medium text-gray-900 hover:text-groq-orange transition-colors select-none text-sm md:text-base">
+                  <ChevronRight size={16} className="group-open:rotate-90 transition-transform text-gray-400 flex-shrink-0" />
                   How I noticed this (short story)
                 </summary>
-                <div className="p-4 pt-6 text-gray-600 text-base border-t border-transparent group-open:border-gray-200">
+                <div className="p-3 md:p-4 pt-4 md:pt-6 text-gray-600 text-sm md:text-base border-t border-transparent group-open:border-gray-200">
                   <p className="mb-3">
                     One of the most capable builders I know, George – who works with me and runs products doing tens of thousands of pounds in MRR – hadn't heard of Groq until we sat in a Groq masterclass at Web Summit.
                   </p>
@@ -357,15 +357,15 @@ export default function Home() {
 
         {/* 6. Segment to Own (Flywheel) */}
         <Section id="segment-to-own" className="border-b border-gray-100">
-          <div className="text-center mb-8 max-w-2xl mx-auto">
+          <div className="text-center mb-6 md:mb-8 max-w-2xl mx-auto px-4">
             <span className="text-groq-orange font-mono text-xs uppercase tracking-wider mb-2 block">05 / Strategy</span>
-            <h2 className="text-3xl font-bold text-gray-900 mb-4">The segment I think Groq can quietly own</h2>
-            <p className="text-gray-600 font-light">
+            <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-3 md:mb-4">The segment I think Groq can quietly own</h2>
+            <p className="text-sm md:text-base text-gray-600 font-light">
               Technical students, young founders, and hackathon teams. They are cost-sensitive, latency-sensitive, and tool-loyal.
             </p>
           </div>
 
-          <div className="relative max-w-4xl mx-auto h-[400px] md:h-[300px] my-8">
+          <div className="relative max-w-4xl mx-auto min-h-[320px] md:h-[300px] my-6 md:my-8 px-4">
             {/* Desktop Layout */}
             <div className="hidden md:flex relative items-center h-full w-full">
               {/* Connecting Line */}
@@ -433,9 +433,9 @@ export default function Home() {
             </div>
 
             {/* Mobile Layout */}
-            <div className="md:hidden flex flex-col items-center justify-between h-full">
+            <div className="md:hidden flex flex-col items-center justify-center gap-4 py-4">
               {/* Connecting Line */}
-              <div className="absolute top-10 bottom-10 left-1/2 w-px bg-gray-100 -z-10" />
+              <div className="absolute top-8 bottom-8 left-1/2 w-px bg-gray-100 -z-10" />
 
               <FlywheelNode 
                 icon={GraduationCap} 
@@ -443,7 +443,7 @@ export default function Home() {
                 delay={0.1}
               />
               
-              <div className="text-gray-300">
+              <div className="text-gray-300 py-1">
                 <ArrowRight className="rotate-90" size={16} strokeWidth={1} />
               </div>
 
@@ -453,7 +453,7 @@ export default function Home() {
                 delay={0.2}
               />
 
-              <div className="text-gray-300">
+              <div className="text-gray-300 py-1">
                 <ArrowRight className="rotate-90" size={16} strokeWidth={1} />
               </div>
 
@@ -463,7 +463,7 @@ export default function Home() {
                 delay={0.3}
               />
 
-              <div className="text-gray-300">
+              <div className="text-gray-300 py-1">
                 <ArrowRight className="rotate-90" size={16} strokeWidth={1} />
               </div>
 
@@ -475,8 +475,8 @@ export default function Home() {
             </div>
           </div>
 
-          <div className="text-center max-w-2xl mx-auto text-sm text-gray-500 mt-12">
-            If Groq becomes their default inference platform now, you get bottom-up adoption, long-term lock-in, and a generation of builders who instinctively think “Groq”.
+          <div className="text-center max-w-2xl mx-auto text-xs md:text-sm text-gray-500 mt-8 md:mt-12 px-4">
+            If Groq becomes their default inference platform now, you get bottom-up adoption, long-term lock-in, and a generation of builders who instinctively think "Groq".
           </div>
         </Section>
 
