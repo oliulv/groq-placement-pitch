@@ -60,11 +60,7 @@ export function AskOliverWidget() {
   );
 
   const renderContent = (content: string) => {
-    const html = marked.parse(content, {
-      mangle: false,
-      headerIds: false,
-      breaks: true,
-    }) as string;
+    const html = marked.parse(content, { breaks: true }) as string;
     return (
       <div
         className="ask-oliver-markdown"

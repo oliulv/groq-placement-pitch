@@ -77,7 +77,6 @@ export async function POST(req: Request) {
       model: DEFAULT_MODEL,
       messages: [
         { role: "system", content: SYSTEM_PROMPT },
-        // @ts-expect-error - allowing pass-through of message roles/content from client
         ...messages,
       ],
       temperature: 0,
