@@ -17,13 +17,13 @@ import {
 import { clsx, type ClassValue } from "clsx";
 import { twMerge } from "tailwind-merge";
 import { CONTACT } from "@/lib/constants";
+import { AskOliverWidget } from "@/components/AskOliverWidget";
 
 function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs));
 }
 
 const navLinks = [
-  { label: "Hero", href: "#hero" },
   { label: "Groq's Position", href: "#groq-position" },
   { label: "Speed Gap", href: "#speed-gap" },
   { label: "Why I Care", href: "#why-i-care" },
@@ -116,6 +116,7 @@ export default function Home() {
 
   return (
     <div className="min-h-screen bg-white text-gray-900 selection:bg-groq-orange/10 font-sans">
+      <AskOliverWidget />
       {/* Progress Bar */}
       <motion.div
         className="fixed top-0 left-0 right-0 h-1 bg-groq-orange origin-left z-50"
@@ -129,10 +130,13 @@ export default function Home() {
       {/* Navigation */}
       <header className="fixed top-0 left-0 right-0 z-40 bg-white/80 backdrop-blur-md border-b border-gray-100">
         <div className="max-w-[1100px] mx-auto px-6 sm:px-8 h-16 flex items-center justify-between">
-          <div className="font-mono font-bold text-sm tracking-tight flex items-center gap-2">
+          <a 
+            href="#hero" 
+            className="font-mono font-bold text-sm tracking-tight flex items-center gap-2 hover:text-groq-orange transition-colors"
+          >
             <div className="w-2 h-2 bg-groq-orange rounded-full" />
             OLIVER / GROQ
-          </div>
+          </a>
           
           <nav className="hidden md:flex items-center gap-6 text-sm font-medium text-gray-500">
             {navLinks.slice(0, 5).map((link) => (
