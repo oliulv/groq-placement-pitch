@@ -235,10 +235,10 @@ export default function Home() {
                 </div>
               </div>
               <p>
-                In both cases, the value shifts to <span className="text-gray-900 font-medium">cheap, fast, reliable inference</span> – getting answers out of models into products fast and at scale..
+                In both cases, the value shifts to <span className="text-gray-900 font-medium">cheap, fast, reliable inference</span> – getting answers out of models into products fast and at scale.
               </p>
               <p>
-                You’re perfectly position for either scenario.
+                You’re perfectly positioned for either scenario.
               </p>
             </div>
           </div>
