@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { Analytics } from "@vercel/analytics/next";
 import { Inter, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
 
@@ -28,6 +29,7 @@ export default function RootLayout({
     <html lang="en" className="scroll-smooth">
       <body className={`${inter.variable} ${jetbrainsMono.variable} font-sans antialiased bg-white text-gray-900 selection:bg-groq-orange/20 selection:text-groq-orange`}>
         {children}
+        <Analytics />
       </body>
     </html>
   );
