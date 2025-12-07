@@ -40,10 +40,6 @@ Groq fit: wants an industrial placement contributing to developer-facing experie
 
 In short: Oliver is a technically capable, execution-oriented builder who understands startups and AI infra, and wants his placement year to help Groq win mindshare with the next generation of builders.`;
 
-const groq = new Groq({
-  apiKey: process.env.GROQ_API_KEY,
-});
-
 // Default to the requested OSS model; override via GROQ_MODEL if desired.
 const DEFAULT_MODEL = process.env.GROQ_MODEL ?? "openai/gpt-oss-120b";
 
@@ -73,6 +69,10 @@ export async function POST(req: Request) {
   }
 
   try {
+    const groq = new Groq({
+      apiKey: process.env.GROQ_API_KEY,
+    });
+
     const completion = await groq.chat.completions.create({
       model: DEFAULT_MODEL,
       messages: [
